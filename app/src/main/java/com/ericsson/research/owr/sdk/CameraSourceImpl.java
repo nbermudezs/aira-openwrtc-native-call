@@ -67,8 +67,8 @@ class CameraSourceImpl extends CameraSource {
 
     @Override
     public VideoView createVideoView() {
-    	VideoView v = new VideoViewImpl(this, 320, 240, 5);
-    	v.setRotation(1);
+    	VideoView v = new VideoViewImpl(this, 176, 144, 5);
+    	v.setRotation(2);
     	 return v;
        // return new VideoViewImpl(this, 640, 480, 5); // working
     	

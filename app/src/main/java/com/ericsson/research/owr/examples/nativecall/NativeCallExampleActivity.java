@@ -115,6 +115,9 @@ public class NativeCallExampleActivity extends Activity implements
 
         mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         mRtcConfig = RtcConfigs.defaultConfig(Config.STUN_SERVER);
+
+        mSessionInput.setText("4f575c");
+        onJoinClicked(mJoinButton);
     }
 
     @Override
@@ -337,8 +340,10 @@ public class NativeCallExampleActivity extends Activity implements
         Toast.makeText(this, "Disconnected from server", Toast.LENGTH_LONG).show();
         updateVideoView(false);
         mStreamSet = null;
-        mRtcSession.stop();
-        mRtcSession = null;
+        if(mRtcSession != null) {
+            mRtcSession.stop();
+            mRtcSession = null;
+        }
         mSignalingChannel = null;
     }
 

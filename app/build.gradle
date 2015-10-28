@@ -26,6 +26,5 @@ dependencies {
     //    See settings.gradle for local dev instructions
     //    compile project(':openwebrtc-sdk')
     //compile 'io.openwebrtc:openwebrtc-android-sdk:0.1.0'
-    compile files('libs/owr-a-0.3.jar')
-    compile files('libs/rhino-1.7R4.jar')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
